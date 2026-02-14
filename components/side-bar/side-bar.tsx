@@ -75,7 +75,7 @@ export const Sidebar = () => {
           onClick={() => router.push('/')}
         >
           <Timer className="h-6 w-6 text-primary" />
-          <h1 className="text-xl font-bold">FlowSync</h1>
+          <h1 className="text-xl font-bold">Lifestack</h1>
         </MotionDiv>
 
         <MotionNav
@@ -114,7 +114,7 @@ export const Sidebar = () => {
           <div className="mt-12">
             <div className="flex items-center gap-2 mb-8">
               <Timer className="h-6 w-6 text-primary" />
-              <h1 className="text-xl font-bold">FlowSync</h1>
+              <h1 className="text-xl font-bold">Lifestack</h1>
             </div>
 
             <nav className="space-y-2">

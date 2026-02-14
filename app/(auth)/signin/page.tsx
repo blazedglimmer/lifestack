@@ -8,7 +8,7 @@ export default function SignInPage() {
         <SignInForm />
       </div>
       <div className="mt-8 text-center text-xs text-muted-foreground">
-        <p>© {new Date().getFullYear()} FlowSync. All rights reserved.</p>
+        <p>© {new Date().getFullYear()} Lifestack. All rights reserved.</p>
       </div>
     </div>
   );

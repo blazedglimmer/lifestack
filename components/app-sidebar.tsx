@@ -123,7 +123,7 @@ export function AppSidebar() {
             <PieChart className="h-4 w-4" />
           </div>
           <span className="text-xl font-bold bg-gradient-to-r from-primary to-primary/70 bg-clip-text text-transparent">
-            FlowSync
+            Lifestack
           </span>
         </div>
       </SidebarHeader>

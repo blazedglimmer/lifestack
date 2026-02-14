@@ -1,6 +1,6 @@
 export const siteConfig = {
-  name: 'FlowSync - A productivity tool for everyone',
-  siteName: 'FlowSync',
+  name: 'Lifestack - A productivity tool for everyone',
+  siteName: 'Lifestack',
   url: '',
   twitterHandle: '@indiehash2',
   twitterURL: 'https://twitter.com/indiehash2',

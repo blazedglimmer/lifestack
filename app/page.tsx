@@ -16,7 +16,7 @@ export default async function Home() {
                 Track Your Time, Boost Your Productivity
               </h1>
               <p className="text-lg text-muted-foreground mb-8 max-w-2xl">
-                FlowSync helps you track your time efficiently, analyze your
+                Lifestack helps you track your time efficiently, analyze your
                 productivity patterns, and collaborate with your team
                 seamlessly.
               </p>
@@ -41,7 +41,7 @@ export default async function Home() {
               <div className="w-full aspect-square relative">
                 <Image
                   src="/hero-image.svg"
-                  alt="FlowSync Hero"
+                  alt="Lifestack Hero"
                   fill
                   className="object-contain"
                   priority
@@ -134,7 +134,7 @@ export default async function Home() {
           </h2>
           <p className="text-lg text-primary-foreground/80 mb-8 max-w-2xl mx-auto">
             Join thousands of users who have transformed their time management
-            with FlowSync.
+            with Lifestack.
           </p>
           <Link href="/signup">
             <Button size="lg" variant="secondary" className="w-full sm:w-auto">
