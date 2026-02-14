@@ -61,11 +61,13 @@ export default function RootLayout({
               disableTransitionOnChange
             >
               <AppSidebar />
-              <ModeToggle className="fixed top-4 right-4" />
-              {/* <Header /> */}
-              {/* <Sidebar /> */}
-              <SidebarTrigger className="z-20" />
-              {children}
+              <div className="flex flex-col flex-1 w-full">
+                <div className="flex items-center justify-between px-6 py-4 border-b border-border/40 bg-background/80 backdrop-blur-sm sticky top-0 z-40">
+                  <SidebarTrigger className="z-20" />
+                  <ModeToggle />
+                </div>
+                {children}
+              </div>
               <Toaster />
             </ThemeProvider>
             <TailwindIndicator />

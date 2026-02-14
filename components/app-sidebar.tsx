@@ -117,20 +117,20 @@ export function AppSidebar() {
 
   return (
     <Sidebar>
-      <SidebarHeader className="h-16 flex items-center justify-center border-b border-sidebar-border">
-        <div className="flex items-center gap-2 px-2">
-          <div className="flex h-8 w-8 items-center justify-center rounded-md bg-primary text-primary-foreground">
-            <PieChart className="h-4 w-4" />
+      <SidebarHeader className="h-14 flex items-center border-b border-sidebar-border/50">
+        <div className="flex items-center gap-3 px-4 w-full">
+          <div className="flex h-7 w-7 items-center justify-center rounded-md bg-primary text-primary-foreground font-semibold text-sm">
+            L
           </div>
-          <span className="text-xl font-bold bg-gradient-to-r from-primary to-primary/70 bg-clip-text text-transparent">
+          <span className="text-base font-semibold text-sidebar-foreground">
             Lifestack
           </span>
         </div>
       </SidebarHeader>
-      <SidebarContent className="px-2 py-4">
+      <SidebarContent className="px-3 py-6">
         {menuItems.map((section, index) => (
-          <SidebarGroup key={section.category} className="mb-4">
-            <SidebarGroupLabel className="text-xs font-medium text-muted-foreground mb-1 px-2">
+          <SidebarGroup key={section.category} className="mb-6">
+            <SidebarGroupLabel className="text-xs font-medium text-sidebar-foreground/50 mb-3 px-3 tracking-wider">
               {section.category}
             </SidebarGroupLabel>
             <SidebarGroupContent>
@@ -142,20 +142,21 @@ export function AppSidebar() {
                       <SidebarMenuButton
                         asChild
                         isActive={isActive}
-                        className="transition-all duration-200 group"
+                        className={`transition-all duration-200 group rounded-lg h-9 ${
+                          isActive
+                            ? 'bg-sidebar-accent text-sidebar-foreground'
+                            : 'text-sidebar-foreground/70 hover:text-sidebar-foreground hover:bg-sidebar-accent/50'
+                        }`}
                       >
-                        <Link href={item.url}>
+                        <Link href={item.url} className="relative">
                           <item.icon
                             className={`h-4 w-4 ${
                               isActive
-                                ? 'text-primary'
-                                : 'group-hover:text-primary/80'
+                                ? 'text-sidebar-primary'
+                                : 'group-hover:text-sidebar-primary/80'
                             }`}
                           />
-                          <span>{item.title}</span>
-                          {isActive && (
-                            <div className="absolute left-0 top-0 h-full w-1 rounded-r-md bg-primary" />
-                          )}
+                          <span className="text-sm">{item.title}</span>
                         </Link>
                       </SidebarMenuButton>
                     </SidebarMenuItem>
@@ -164,72 +165,69 @@ export function AppSidebar() {
               </SidebarMenu>
             </SidebarGroupContent>
             {index < menuItems.length - 1 && (
-              <SidebarSeparator className="my-2" />
+              <SidebarSeparator className="my-4 bg-sidebar-border/30" />
             )}
           </SidebarGroup>
         ))}
       </SidebarContent>
-      <SidebarFooter className="border-t border-sidebar-border p-2">
-        <div className="flex items-center justify-between p-2">
-          <DropdownMenu>
-            <DropdownMenuTrigger asChild>
-              <Button
-                variant="ghost"
-                className="flex items-center gap-2 w-full justify-start p-2 h-auto hover:bg-sidebar-accent"
+      <SidebarFooter className="border-t border-sidebar-border/50 p-3">
+        <DropdownMenu>
+          <DropdownMenuTrigger asChild>
+            <Button
+              variant="ghost"
+              className="flex items-center gap-3 w-full justify-start px-3 py-2 h-auto hover:bg-sidebar-accent rounded-lg transition-colors"
+            >
+              <Avatar className="h-7 w-7">
+                <AvatarImage src={session?.user?.image || ''} />
+                <AvatarFallback className="bg-sidebar-primary/10 text-sidebar-primary text-xs font-semibold">
+                  {session?.user.name
+                    ?.split(' ')
+                    .map(name => name[0])
+                    .join('')}
+                </AvatarFallback>
+              </Avatar>
+              <div className="flex flex-col items-start min-w-0">
+                <span className="text-sm font-medium text-sidebar-foreground truncate">
+                  {session?.user.name}
+                </span>
+                <span className="text-xs text-sidebar-foreground/50 truncate">
+                  {session?.user.email}
+                </span>
+              </div>
+            </Button>
+          </DropdownMenuTrigger>
+          <DropdownMenuContent align="end" className="w-56">
+            <DropdownMenuItem>
+              <User className="mr-2 h-4 w-4" />
+              <Link href={'/profile'}>Profile</Link>
+            </DropdownMenuItem>
+            <DropdownMenuItem asChild>
+              <button
+                onClick={() =>
+                  document.documentElement.classList.toggle('dark')
+                }
+                className="flex w-full cursor-pointer select-none items-center rounded-sm px-2 py-1.5 text-sm outline-none transition-colors hover:bg-sidebar-accent hover:text-sidebar-accent-foreground"
               >
-                <Avatar className="h-8 w-8">
-                  <AvatarImage src={session?.user?.image || ''} />
-                  <AvatarFallback className="bg-primary/10 text-primary">
-                    {session?.user.name
-                      ?.split(' ')
-                      .map(name => name[0])
-                      .join('')}
-                  </AvatarFallback>
-                </Avatar>
-                <div className="flex flex-col items-start">
-                  <span className="text-sm font-medium">
-                    {session?.user.name}
-                  </span>
-                  <span className="text-xs text-muted-foreground">
-                    {session?.user.email}
-                  </span>
-                </div>
-              </Button>
-            </DropdownMenuTrigger>
-            <DropdownMenuContent align="end" className="w-56">
-              <DropdownMenuItem>
-                <User className="mr-2 h-4 w-4" />
-                <Link href={'/profile'}>Profile</Link>
-              </DropdownMenuItem>
-
-              <DropdownMenuItem asChild>
-                <button
-                  onClick={() =>
-                    document.documentElement.classList.toggle('dark')
-                  }
-                  className="flex w-full cursor-pointer select-none items-center rounded-sm px-2 py-1.5 text-sm outline-none transition-colors focus:bg-accent focus:text-accent-foreground"
-                >
-                  {isDarkMode === 'dark' ? (
-                    <>
-                      <Sun className="mr-2 h-4 w-4" />
-                      <span>Light Mode</span>
-                    </>
-                  ) : (
-                    <>
-                      <Moon className="mr-2 h-4 w-4" />
-                      <span>Dark Mode</span>
-                    </>
-                  )}
-                </button>
-              </DropdownMenuItem>
-              <DropdownMenuSeparator />
-              <DropdownMenuItem className="cursor-pointer">
-                <LogOut className="mr-2 h-4 w-4" />
-                <span>Log out</span>
-              </DropdownMenuItem>
-            </DropdownMenuContent>
-          </DropdownMenu>
-        </div>
+                {isDarkMode === 'dark' ? (
+                  <>
+                    <Sun className="mr-2 h-4 w-4" />
+                    <span>Light Mode</span>
+                  </>
+                ) : (
+                  <>
+                    <Moon className="mr-2 h-4 w-4" />
+                    <span>Dark Mode</span>
+                  </>
+                )}
+              </button>
+            </DropdownMenuItem>
+            <DropdownMenuSeparator />
+            <DropdownMenuItem className="cursor-pointer">
+              <LogOut className="mr-2 h-4 w-4" />
+              <span>Log out</span>
+            </DropdownMenuItem>
+          </DropdownMenuContent>
+        </DropdownMenu>
       </SidebarFooter>
       <SidebarRail />
     </Sidebar>
