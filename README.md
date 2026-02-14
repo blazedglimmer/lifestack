@@ -31,7 +31,7 @@ A modern, full-stack productivity tracking application built with Next.js, featu
 
 ### Frontend
 
-- **Next.js 15** - React framework with App Router
+- **Next.js 16** - React framework with App Router
 - **TypeScript** - Type-safe development
 - **Tailwind CSS** - Utility-first styling
 - **Framer Motion** - Smooth animations
