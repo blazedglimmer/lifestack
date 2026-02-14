@@ -1,4 +1,4 @@
-# FlowSync - Comprehensive Productivity Tracker
+# Lifestack - Comprehensive Productivity Tracker
 
 A modern, full-stack productivity tracking application built with Next.js, featuring time tracking, notes management, nutrition tracking, and social collaboration features.
 
@@ -71,7 +71,7 @@ A modern, full-stack productivity tracking application built with Next.js, featu
 
 ```bash
 git clone https://github.com/blazedglimmer/ProductivityTracker
-cd flowsync
+cd Lifestack
 ```
 
 ### 2. Install Dependencies
@@ -86,7 +86,7 @@ Create a `.env.local` file in the root directory:
 
 ```env
 # Database
-DATABASE_URL="postgresql://username:password@localhost:5432/flowsync"
+DATABASE_URL="postgresql://username:password@localhost:5432/Lifestack"
 
 # NextAuth
 NEXTAUTH_URL="http://localhost:3000"
@@ -122,7 +122,7 @@ Visit `http://localhost:3000` to see the application.
 ## 📁 Project Structure
 
 ```
-flowsync/
+Lifestack/
 ├── app/                    # Next.js App Router
 │   ├── (app)/             # Protected app routes
 │   ├── (auth)/            # Authentication routes
@@ -225,10 +225,10 @@ vercel --prod
 
 ```bash
 # Build image
-docker build -t flowsync .
+docker build -t Lifestack .
 
 # Run container
-docker run -p 3000:3000 flowsync
+docker run -p 3000:3000 Lifestack
 ```
 
 ### Environment Variables for Production
@@ -343,7 +343,7 @@ This project is licensed under the MIT License - see the [LICENSE](LICENSE) file
 
 ## 📞 Support
 
-For support, email support@flowsync.com or join our [Discord community](https://discord.gg/flowsync).
+For support, email support@Lifestack.com or join our [Discord community](https://discord.gg/Lifestack).
 
 ## 🗺 Roadmap
 
@@ -358,4 +358,4 @@ For support, email support@flowsync.com or join our [Discord community](https://
 
 ---
 
-**FlowSync** - Track your time, boost your productivity, collaborate with your team.
+**Lifestack** - Track your time, boost your productivity, collaborate with your team.
