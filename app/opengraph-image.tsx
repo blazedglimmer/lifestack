@@ -2,7 +2,7 @@ import { ImageResponse } from 'next/og';
 
 export const runtime = 'edge';
 
-export const alt = 'Lifestack - Time Tracking Made Simple';
+export const alt = 'Lifestack - Life Tracking Machine';
 export const size = {
   width: 1200,
   height: 630,

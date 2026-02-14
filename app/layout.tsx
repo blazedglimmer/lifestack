@@ -23,19 +23,19 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  title: 'Lifestack - Time Tracking Made Simple',
+  title: 'Lifestack - Life Tracking Machine',
   description:
     'Track your time efficiently and boost your productivity with Lifestack.',
   twitter: {
     card: 'summary_large_image',
-    title: 'Lifestack - Time Tracking Made Simple',
+    title: 'Lifestack - Life Tracking Machine',
     description:
       'Track your time efficiently and boost your productivity with Lifestack.',
     creator: '@flow_sync',
     images: ['https://example.com/image.jpg'],
   },
   openGraph: {
-    title: 'Lifestack - Time Tracking Made Simple',
+    title: 'Lifestack - Life Tracking Machine',
     description:
       'Track your time efficiently and boost your productivity with Lifestack.',
     url: 'https://example.com',

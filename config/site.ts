@@ -1,5 +1,5 @@
 export const siteConfig = {
-  name: 'Lifestack - A productivity tool for everyone',
+  name: 'Lifestack - Best productivity tool for everyone',
   siteName: 'Lifestack',
   url: '',
   twitterHandle: '@indiehash2',

@@ -1,4 +1,4 @@
-# Lifestack - Comprehensive Productivity Tracker
+# Lifestack - Comprehensive Life & Productivity Tracker
 
 A modern, full-stack productivity tracking application built with Next.js, featuring time tracking, notes management, nutrition tracking, and social collaboration features.
 
